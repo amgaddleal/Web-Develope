@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Amjad Daleel | Web Developer</title>
+  <a href="https://github.com/amgaddleal/CV-Amjad.git">Open My CV</a>
+
+  <style>
+    body {
+      font-family: sans-serif;
+      margin: 0;
+      padding: 0;
+      background: #ffffff;
+      color: #333;
+    }
+
+    header {
+      background: #767976;
+      color: rgb(0, 0, 0);
+      padding: 2rem;
+      text-align: center;
+    }
+
+    main {
+      padding: 2rem;
+      max-width: 800px;
+      margin: auto;
+    }
+
+    section {
+      margin-bottom: 2rem;
+    }
+
+    h1, h2 {
+      color: #030303;
+    }
+
+    a {
+      color: #000000;
+      text-decoration: none;
+    }
+
+    .project {
+      background: rgb(160, 159, 159);
+      padding: 1rem;
+      margin-bottom: 1rem;
+      border-radius: 8px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    }
+
+    select {
+      margin-top: 1rem;
+      padding: 0.5rem;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1 id="title">Amjad Daleel - Web Developer</h1>
+    <p id="intro">I build interactive and modern websites using HTML, CSS, and JavaScript</p>
+    <select id="language-switcher">
+      <option value="en">English</option>
+      <option value="ar">العربية</option>
+    </select>
+  </header>
+
+  <main>
+    <section>
+      <h2 id="about-title">About Me</h2>
+      <p id="about-text">I'm Amjad Daleel, a web developer aspiring to work in any Country. I'm self-learning programming and building real-world projects.</p>
+    </section>
+
+    <section>
+      <h2 id="projects-title">My Projects</h2>
+      <div class="project">
+        <h3 id="project1-title">Fake Company Website</h3>
+        <p id="project1-desc">A simple informational site for a service-based company. Includes homepage, contact us, and services pages.</p>
+        <a href="#">View Project</a> | <a href="#">View Code</a>
+      </div>
+      <div class="project">
+        <h3 id="project2-title">To-Do List App</h3>
+        <p id="project2-desc">A simple app that allows users to add, edit, and delete daily tasks.</p>
+        <a href="#">View Project</a> | <a href="#">View Code</a>
+      </div>
+    </section>
+
+    <section>
+      <h2 id="contact-title">Contact Me</h2>
+      <p id="contact-info">
+        GitHub: <a href="https://github.com/amjaddleal" target="_blank">amjaddleal</a><br />
+        Email: amjaddleal@email.com
+      </p>
+    </section>
+  </main>
+
+  <script>
+    console.log("Welcome to Amjad Daleel's Portfolio!");
+    const translations = {
+      en: {
+        title: "Amjad Daleel - Web Developer",
+        intro: "I build interactive and modern websites using HTML, CSS, and JavaScript",
+        "about-title": "About Me",
+        "about-text": "I'm Amjad Daleel, a web developer aspiring to work in any Country. I'm self-learning programming and building real-world projects.",
+        "projects-title": "My Projects",
+        "project1-title": "Fake Company Website",
+        "project1-desc": "A simple informational site for a service-based company. Includes homepage, contact us, and services pages.",
+        "project2-title": "To-Do List App",
+        "project2-desc": "A simple app that allows users to add, edit, and delete daily tasks.",
+        "contact-title": "Contact Me",
+        "contact-info": `GitHub: <a href="https://github.com/amjaddleal" target="_blank">amjaddleal</a><br />Email: amjaddleal@email.com`,
+      },
+      ar: {
+        title: "امجد دليل - مطور ويب",
+        intro: "أبني مواقع تفاعلية وعصرية باستخدام HTML, CSS, وJavaScript",
+        "about-title": "عنّي",
+        "about-text": "أنا امجد دليل، مطور ويب أطمح للعمل في اي بلد في العالم. أتعلم البرمجة ذاتيًا وأعمل على مشاريع واقعية.",
+        "projects-title": "مشاريعي",
+        "project1-title": "موقع شركة وهمية",
+        "project1-desc": "موقع تعريفي بسيط لشركة خدمية. يشمل الصفحة الرئيسية، تواصل معنا، والخدمات.",
+        "project2-title": "تطبيق قائمة المهام",
+        "project2-desc": "تطبيق بسيط يسمح للمستخدمين بإضافة، تعديل، وحذف المهام اليومية.",
+        "contact-title": "تواصل معي",
+        "contact-info": `GitHub: <a href="https://github.com/amjaddleal" target="_blank">amjaddleal</a><br />البريد الإلكتروني: amjaddleal@email.com`,
+      }
+    };
+
+    const switcher = document.getElementById("language-switcher");
+    switcher.addEventListener("change", () => {
+      const lang = switcher.value;
+      for (const key in translations[lang]) {
+        const el = document.getElementById(key);
+        if (el) {
+          el.innerHTML = translations[lang][key];
+        }
+      }
+      document.body.dir = lang === "ar" ? "rtl" : "ltr";
+      document.documentElement.lang = lang;
+    });
+  </script>
+</body>
+</html>
